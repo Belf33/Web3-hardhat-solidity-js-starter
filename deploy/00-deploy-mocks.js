@@ -18,6 +18,8 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
             args: [DECIMALS, INITIAL_ANSWER],
         });
         log('Mocks deployed!');
+
+        
         log(
             '-----------------------------------------------------------------------------------------------'
         );
