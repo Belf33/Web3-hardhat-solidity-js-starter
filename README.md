@@ -7,6 +7,5 @@ Try running some of the following tasks:
 ```shell
 yarn hardhat help
 yern hardhat test
-
 to run on test net - 'yarn hardhat deploy --network goerli'
 to deploy both mocks and real contract - 'yarn hardhat deploy'
