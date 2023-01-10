@@ -26,6 +26,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
 
     // for localhosts or hardhat network we are going to use mocks
     const args = [ethUsdPriceFeedAddress];
+    
     const fundMe = await deploy('FundMe', {
         from: deployer,
         args: args, // price feed address
