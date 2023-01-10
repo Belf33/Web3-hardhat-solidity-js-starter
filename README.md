@@ -6,7 +6,9 @@ Try running some of the following tasks:
 
 ```shell
 yarn hardhat help
-yern hardhat test
-
+yarn hardhat compile
+yarn hardhat coverage
 to run on test net - 'yarn hardhat deploy --network goerli'
 to deploy both mocks and real contract - 'yarn hardhat deploy'
+
+yern hardhat test
