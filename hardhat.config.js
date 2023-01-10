@@ -38,11 +38,11 @@ module.exports = {
         },
     },
     gasReporter: {
-        enabled: false,
+        enabled: true,
         // outputFile: 'gas-report.txt',
         noColors: false,
         currency: 'USD',
-        coinmarketcap: COINMARKETCUP_API_KEY,
+        // coinmarketcap: COINMARKETCUP_API_KEY,
         token: 'MATIC',
     },
     namedAccounts: {

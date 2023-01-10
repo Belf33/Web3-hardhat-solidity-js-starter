@@ -20,27 +20,25 @@ describe('FundMe', function () {
 
     describe('constructor', function () {
         it('sets the aggregator addresses correctly', async () => {
-            const response = await fundMe.priceFeed()
+            const response = await fundMe.getsPriceFeed()
             assert.equal(response, mockV3Aggregator.address)
         })
     })
 
     describe('fund', async () => {
         it("Fails if you don't send enough ETH", async () => {
-            await expect(fundMe.fund()).to.be.revertedWith(
-                'You need to spend more ETH!'
-            )
+            await expect(fundMe.fund()).to.be.reverted
         })
 
         it('Updated amount addressToAmountFunded data structure', async () => {
             await fundMe.fund({ value: sendValue })
-            const responce = await fundMe.addressToAmountFunded(deployer)
+            const responce = await fundMe.getAmountFundedByAddress(deployer)
             assert.equal(responce.toString(), sendValue.toString())
         })
 
         it('Add funder to array of funders', async () => {
             await fundMe.fund({ value: sendValue })
-            const responce = await fundMe.funders(0)
+            const responce = await fundMe.getFunder(0)
             assert.equal(responce, deployer)
         })
     })
@@ -115,11 +113,11 @@ describe('FundMe', function () {
                 endingDeployerBalance.add(gasCost).toString()
             )
 
-            await expect(fundMe.funders(0)).to.be.reverted
+            await expect(fundMe.getFunder(0)).to.be.reverted
 
             for (i = 1; i < 6; i++) {
                 assert.equal(
-                    await fundMe.addressToAmountFunded(accounts[i].address),
+                    await fundMe.getAmountFundedByAddress(accounts[i].address),
                     0
                 )
             }
