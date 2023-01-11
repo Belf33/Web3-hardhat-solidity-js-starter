@@ -5,10 +5,20 @@ This project demonstrates a basic Hardhat use case. It comes with a sample contr
 Try running some of the following tasks:
 
 ```shell
-yarn hardhat help
-yarn hardhat compile
-yarn hardhat coverage
-to run on test net - 'yarn hardhat deploy --network goerli'
-to deploy both mocks and real contract - 'yarn hardhat deploy'
+- yarn hardhat help
+- yarn hardhat compile
+- yarn hardhat coverage
+to deploy on test net 
+- 'yarn deploy --network goerli'
+to deploy both mocks and real contract 
+- 'yarn deploy'
 
-yern hardhat test
+Run test on mocks + localNetwork
+- 'yarn test'
+
+to run tests on test network ( after deploy )
+- 'yarn test:staging'
+
+run Scripts on localNode:
+- run node first 'yarn hardhat node'
+- 'yarn hardhat run scripts/fund.js --network localhost'
